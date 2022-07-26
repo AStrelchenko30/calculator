@@ -18,25 +18,29 @@ public class Greeting {
     }
 
     @GetMapping(path = "/calculator/plus")
-    public String action1(@RequestParam int num1, @RequestParam int num2) {
+    public int action1(@RequestParam int num1, @RequestParam int num2) {
         return actions.action1(num1, num2);
 
     }
 
     @GetMapping(path = "/calculator/minus")
-    public String action2(@RequestParam int num1, @RequestParam int num2) {
+    public int action2(@RequestParam int num1, @RequestParam int num2) {
         return actions.action2(num1, num2);
     }
 
     @GetMapping(path = "/calculator/multiply")
-    public String action3(@RequestParam int num1, @RequestParam int num2) {
+    public int action3(@RequestParam int num1, @RequestParam int num2) {
         return actions.action3(num1, num2);
     }
 
     @GetMapping(path = "/calculator/divide")
-    public String action4(@RequestParam int num1, @RequestParam int num2) {
-        return actions.action4(num1, num2);
+    public int action4(@RequestParam int num1, @RequestParam int num2) {
+        if (num2 == 0) {
+            throw new IllegalArgumentException("Делить на ноль НЕЛЬЗЯ!");
+        }
+            return actions.action4(num1, num2);
+        }
     }
-}
+
 
 

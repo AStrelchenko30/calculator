@@ -11,27 +11,25 @@ public class Actions implements Interface {
     }
 
 
-    public String action1(int num1, int num2) {
-        int sum = num1 + num2;
-        return (num1 + "+" + num2 + "=" + sum);
+    public int action1(@RequestParam int num1, @RequestParam int num2) {
+        return num1 + num2;
     }
 
-    public String action2(int num1, int num2) {
-        int minus = num1 - num2;
-        return num1 + "-" + num2 + "=" + minus;
+    public int action2(@RequestParam int num1, @RequestParam int num2) {
+        return num1 - num2;
+
     }
 
-    public String action3(@RequestParam int num1, @RequestParam int num2) {
-        int multip = num1 * num2;
-        return num1 + "*" + num2 + "=" + multip;
+    public int action3(@RequestParam int num1, @RequestParam int num2) {
+        return num1 * num2;
+
     }
-    public String action4(@RequestParam int num1, @RequestParam int num2) {
-        if (num1 == 0 || num2 == 0) {
-            return "Ошибка в данных";
-        }else {
-            int divide = num1 / num2;
-            return num1 + "/" + num2 + "=" + divide;
+    public int action4(@RequestParam int num1, @RequestParam int num2) {
+            return num1 / num2;
+
         }
-    }
 
 }
+
+
+
